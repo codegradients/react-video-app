@@ -1,17 +1,19 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
+import { ColorModeScript, ChakraProvider, theme } from '@chakra-ui/react';
+import React, { StrictMode } from 'react';
+import * as ReactDOM from 'react-dom/client';
+import ColorModeSwitcher from './ColorModeSwitcher';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  <StrictMode>
+    <ColorModeScript />
+    <ChakraProvider theme={theme}>
+      <ColorModeSwitcher />
+      <App />
+    </ChakraProvider>
+  </StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// Project Link
+// https://react-video-app-xi.vercel.app/
